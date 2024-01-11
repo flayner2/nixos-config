@@ -22,7 +22,6 @@ in
 	"HDMI-A-2, preferred, 0x0, 1"
       ];
       
-
       # Exec script for startup apps
       exec-once = [
         "sleep 0.1; swww init"
@@ -72,17 +71,15 @@ in
 	};
       };
 
-      # Animations
+      # Disable animations
       animations.enabled = false;
 
-      # Dwindle layout
+      # Dwindle layout (aka dynamic tyling)
       dwindle = {
         pseudotile = true;
 	preserve_split = true;
+	force_split = 2; # Always split to the right/bottom
       };
-
-      # Master layout
-      master.new_is_master = false;
 
       # Misc 
       misc = {
@@ -123,9 +120,10 @@ in
         "$mod SHIFT, Q, killactive, "
         "$mod SHIFT, E, exit, "
         "$mod, D, exec, rofi -show combi -combi-modes \"window,run\" -show-icons"
-        "$mod, V, togglefloating, "
-        "$mod, P, pseudo, # dwindle"
-        "$mod, J, togglesplit, # dwindle"
+        "$mod, SPACE, togglefloating, "
+	"$mod, F, fullscreen"
+        #"$mod, P, pseudo, # dwindle" # No idea what this does
+        "$mod, J, togglesplit, # dwindle" # Switches the split direction
 	", Print, exec, grimblast copy area"
         
         # Move focus with mod + arrow keys
@@ -133,6 +131,15 @@ in
         "$mod, right, movefocus, r"
         "$mod, up, movefocus, u"
         "$mod, down, movefocus, d"
+
+	# Move focused window in a monitor
+	"$mod SHIFT, left, movewindow, l"
+	"$mod SHIFT, right, movewindow, r"
+	"$mod SHIFT, up, movewindow, u"
+	"$mod SHIFT, down, movewindow, d"
+
+	# Switch active workspace between monitors
+	"$mod, P, movecurrentworkspacetomonitor, -1"
         
         # Switch workspaces with mod + [0-9]
         "$mod, 1, workspace, 1"
@@ -147,6 +154,8 @@ in
         "$mod, 0, workspace, 10"
         
         # Move active window to a workspace with mod + SHIFT + [0-9]
+	# Instead, using 'movetoworkspacesilent' will move the window to
+	# the workspace without switching to it
         "$mod SHIFT, 1, movetoworkspace, 1"
         "$mod SHIFT, 2, movetoworkspace, 2"
         "$mod SHIFT, 3, movetoworkspace, 3"
