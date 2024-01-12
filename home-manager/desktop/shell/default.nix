@@ -11,6 +11,8 @@
     enable = true;
 
     settings = {
+      # Bold blue foreground for directories
+      # in "OTHER_WRITABLE" e.g. my HD Drive
       OTHER_WRITABLE = "1;34";
     };
   };
@@ -37,6 +39,8 @@
     # History
     history = {
       ignoreAllDups = true;
+      # Don't add commented commands to history
+      ignorePatterns = [ "#*" ];
       path = "${config.xdg.dataHome}/zsh/history";
       save = 10000;
       size = 10000;
@@ -48,6 +52,7 @@
     enableCompletion = true;
     historySubstringSearch.enable = true;
     syntaxHighlighting.enable = true;
+
     plugins = [
       {
         name = "colored-man-pages";
@@ -68,6 +73,10 @@
          };
        }
     ];
+
+    # Additional commands that should be added to
+    # .zshr. The type is string, concatenated with \n
+    initExtra = "setopt interactivecomments";
   };
 
   # Environment variables

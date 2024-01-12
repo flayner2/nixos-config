@@ -8,8 +8,7 @@
   imports =
     [ 
       # Include custom modules
-      ../../modules/system.nix
-      ../../modules/hyprland.nix
+      ../../modules
 
       # Include the results of the hardware scan.
       ./hardware-configuration.nix

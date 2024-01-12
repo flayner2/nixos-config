@@ -12,7 +12,8 @@
     };
 
     normal = {
-      black = "#${base01}";
+      # This "black" controls the comments colour
+      black = "#${base02}";
       red = "#${base08}";
       green = "#${base0B}";
       yellow = "#${base0A}";
