@@ -16,6 +16,16 @@
 
     # Copy wallpaper file to home
     file."Wallpapers/wallpaper.png".source = ../../assets/images/wallpaper.png;
+
+    # Environment variables
+    sessionVariables = {
+      WINEPREFIX = "${config.xdg.dataHome}/wine";
+    
+      # Set default applications
+      EDITOR = "nvim";
+      BROWSER = "firefox";
+      TERMINAL = "alacritty";
+    };
   };
 
   colorScheme = nix-colors.colorSchemes.gruvbox-material-dark-medium;

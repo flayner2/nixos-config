@@ -57,35 +57,25 @@
       {
         name = "colored-man-pages";
         src = pkgs.fetchFromGitHub {
-             owner = "ael-code";
-             repo = "zsh-colored-man-pages";
-             rev = "57bdda68e52a09075352b18fa3ca21abd31df4cb";
-             sha256 = "sha256-087bNmB5gDUKoSriHIjXOVZiUG5+Dy9qv3D69E8GBhs=";
+          owner = "ael-code";
+          repo = "zsh-colored-man-pages";
+          rev = "57bdda68e52a09075352b18fa3ca21abd31df4cb";
+          sha256 = "sha256-087bNmB5gDUKoSriHIjXOVZiUG5+Dy9qv3D69E8GBhs=";
         };
-       }
-       {
-         name = "dircycle";
-         src = pkgs.fetchFromGitHub {
-             owner = "michaelxmcbride";
-             repo = "zsh-dircycle";
-             rev = "96ff0e884077d19904092b848cfd2512a42d659e";
-             sha256 = "sha256-ZVbuCoQpRgXDCvTakYZ9hfIaKmaPU9dI3rjrLqFqJkE=";
-         };
-       }
+      }
+      {
+        name = "dircycle";
+        src = pkgs.fetchFromGitHub {
+          owner = "michaelxmcbride";
+          repo = "zsh-dircycle";
+          rev = "96ff0e884077d19904092b848cfd2512a42d659e";
+          sha256 = "sha256-ZVbuCoQpRgXDCvTakYZ9hfIaKmaPU9dI3rjrLqFqJkE=";
+        };
+      }
     ];
 
     # Additional commands that should be added to
     # .zshr. The type is string, concatenated with \n
     initExtra = "setopt interactivecomments";
-  };
-
-  # Environment variables
-  home.sessionVariables = {
-    WINEPREFIX = "${config.xdg.dataHome}/wine";
-
-    # Set default applications
-    EDITOR = "nvim";
-    BROWSER = "firefox";
-    TERMINAL = "alacritty";
   };
 }
