@@ -21,12 +21,19 @@
   programs.zsh = {
     enable = true;
 
+    # Directory (relative to /home/{user} where the
+    # zsh config will reside
     dotDir = ".config/zsh";
+
+    # cd into directory if only the name is typed
+    autocd = true;
 
     # Aliases
     shellAliases = {
       # Terminal utils
       ll = "ls -l";
+      la = "ls -a";
+      lla = "ls -la";
       ".." = "cd ..";
       vim = "nvim";
 
@@ -51,7 +58,10 @@
     enableAutosuggestions = true;
     enableCompletion = true;
     historySubstringSearch.enable = true;
-    syntaxHighlighting.enable = true;
+    syntaxHighlighting = {
+      enable = true;
+      highlighters = [ "main" "brackets" ];
+    };
 
     plugins = [
       {

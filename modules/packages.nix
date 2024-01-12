@@ -112,4 +112,6 @@
 
   # Enable zsh for all users
   programs.zsh.enable = true;
+  # Enables autocompletion for system packages in zsh
+  environment.pathsToLink = [ "/share/zsh" ];
 }
