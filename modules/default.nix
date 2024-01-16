@@ -13,6 +13,7 @@ in
     ./sound.nix
     ./fonts.nix
     ./hyprland.nix
+    ./firefox.nix
     ./docker.nix
   ];
 

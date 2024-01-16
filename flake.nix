@@ -39,7 +39,15 @@
   # Outputs are the build results of the flake.
   # Parameters are defined in "inputs" and are referenced by their names
   # with the exception of the special keyword "self".
-  outputs = { self, nixpkgs, home-manager, nix-colors, unstable, nixvim-flake, ... }@inputs: 
+  outputs = { 
+    self, 
+    nixpkgs, 
+    home-manager, 
+    nix-colors, 
+    unstable, 
+    nixvim-flake, 
+    ... 
+  }@inputs: 
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
