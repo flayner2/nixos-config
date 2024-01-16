@@ -33,11 +33,11 @@
   boot.supportedFilesystems = [ "ntfs" ];
 
   # Mount /dev/sdb1 at boot
-  fileSystems."/mnt/hd-drive" = {
-    device = "/dev/sdb1";
-    fsType = "ntfs-3g";
-    options = [ "rw" "uid=1000" ];
-  };
+  #fileSystems."/mnt/hd-drive" = {
+  #  device = "/dev/sdb1";
+  #  fsType = "ntfs-3g";
+  #  options = [ "rw" "uid=1000" ];
+  #};
 
   networking.hostName = "maycon"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
