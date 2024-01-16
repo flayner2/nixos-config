@@ -3,6 +3,17 @@
 {
   # Configure services 
   services = {
+    # X and Xserver to enable display manager
+    xserver = {
+      enable = true;
+      layout = "br";
+      xkbVariant = "";
+
+      displayManager = {
+        sddm.enable = true;
+      };
+    };
+
     # Enable the OpenSSH daemon
     openssh = {
       enable = true;
@@ -28,5 +39,8 @@
 
     # Manages device events
     udev.packages = with pkgs; [ gnome.gnome-settings-daemon ];
+
+    gvfs.enable = true; # Mount, trash, and other functionalities
+    tumbler.enable = true; # Thumbnail support for images
   };
 }

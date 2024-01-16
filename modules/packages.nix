@@ -114,4 +114,14 @@
   programs.zsh.enable = true;
   # Enables autocompletion for system packages in zsh
   environment.pathsToLink = [ "/share/zsh" ];
+
+  # To open stuff
+  xdg.portal.enable = true;
+  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+
+  # Thunar file manager
+  programs.thunar.plugins = with pkgs.xfce; [
+    thunar-archive-plugin
+    thunar-volman
+  ];
 }

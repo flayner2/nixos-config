@@ -6,6 +6,7 @@ in
   imports = [
     ./packages.nix
     ./users.nix
+    ./environment.nix
     ./locale.nix
     ./network.nix
     ./services.nix
