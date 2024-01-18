@@ -29,11 +29,13 @@ in
 	"nm-applet --indicator"
 	"waybar" 
 	"dunst"
+	"hyprctl setcursor 'Capitaine Cursors (Gruvbox)' 18"
       ];
 
       # Default env vars
       env = [ 
-        "XCURSOR_SIZE, 24" 
+	"XCURSOR_THEME, Capitaine Cursors (Gruvbox)"
+        "XCURSOR_SIZE, 18" 
 	"QT_QPA_PLATFORM, xcb" # Fixes RStudio blank screen
       ];
 

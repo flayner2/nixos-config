@@ -26,6 +26,15 @@
       BROWSER = "firefox";
       TERMINAL = "alacritty";
     };
+
+    # Cursor theme
+    pointerCursor = {
+      gtk.enable = true;
+      x11.enable = true; # Not sure if I need this
+      package = pkgs.capitaine-cursors-themed;
+      name = "Capitaine Cursors (Gruvbox)";
+      size = 12;
+    };
   };
 
   colorScheme = nix-colors.colorSchemes.gruvbox-material-dark-medium;

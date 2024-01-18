@@ -14,6 +14,7 @@
     xfce.thunar
     ranger
     zathura
+    libreoffice-fresh
 
     # Archives
     zip
